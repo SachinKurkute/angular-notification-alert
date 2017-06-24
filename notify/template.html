@@ -1,0 +1,9 @@
+<div ng-show="show">
+	<div class="notification-overlay" ng-click="onClickOverlay()"></div>
+	<div class="notification-container {{config.classes}}">
+		<div class="notification-message">{{config.message}}</div>
+		<div class="notification-buttons">
+			<button ng-repeat="btn in config.buttons" class="notification-button {{btn.classes}}" ng-click="onUserAction(btn)">{{btn.title}}</button>
+		</div>
+	</div>
+</div>

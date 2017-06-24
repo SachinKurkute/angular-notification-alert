@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Gep POC</title>
+<link rel="stylesheet" type="text/css" href="resources/style.css">
+<link rel="stylesheet" type="text/css" href="notify/notify.css">
+<script type="text/javascript" src="resources/lib/angular.min.js"></script>
+<script type="text/javascript" src="notify/notify.js"></script>
+</head>
+<body ng-app="notifyApp">
+	<div ng-controller="notifyC">
+		<div>
+			<h2>Welcome by notify.js</h2>
+		</div>
+		<div>
+			<button ng-click="callAlert()">Alert Call</button>
+<pre>
+	$scope.callAlert = function(){
+		var notificationObj = {
+			message:"Your notification message : Changes are done",
+			dismissal:true,  // dismissal default is : false
+			buttons:[  // You can set nuber of actions
+			{
+				title:'OK',
+				key:'ok'
+			}]
+		}
+
+		notification.notify(notificationObj,function(res){ // res is the button object
+			console.log("You clicked",res);
+		});
+	}
+</pre>
+		</div>
+		<div>
+			<button ng-click="callConfirm()">Confirm Notification</button>
+<pre>
+	$scope.callConfirm = function(){
+		var notificationObj = {
+			message:"Your notification confirm message : Sure ?",
+			buttons:[  
+			{
+				title:'Yes',
+				key:'yes'
+			},
+			{
+				title:'No',
+				key:'no'
+			}]
+		}
+
+		notification.notify(notificationObj,function(res){ // res is the button object
+			console.log("You clicked",res);
+		});
+	}
+</pre>
+		</div>
+	</div>
+
+	<!-- alert-notification directive added on root level-->
+	<alert-notification></alert-notification>
+	<script type="text/javascript" src="resources/app.js"></script>
+</body>
