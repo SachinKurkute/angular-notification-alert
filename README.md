@@ -14,18 +14,18 @@ Demo : https://sachinkurkute.github.io/angular-notification-alert/
 Download URL : https://github.com/SachinKurkute/angular-notification-alert
 
 Add the ***notify.js*** reference just below the angular.js reference. as per given below
-```
+```javascript
 <script type="text/javascript" src="resources/lib/angular.min.js"></script>
 <script type="text/javascript" src="notify/notify.js"></script>
 ```
 Add app module dependency '`notify`' for the your app.
-```
+```javascript
 var myapp = angular.module('notifyApp',['notify']);
 ```
 Inject the '***notification***' dependency with controller.
 We can call the alert and warning messages using `notify()` function
 Add `alert-notification` directive on your root page (`index.html`) inside the angular app
-```
+```javascript
 <body ng-app="myApp">
 <alert-notification></alert-notification>
 </body>
@@ -42,9 +42,9 @@ Properties of Object:
  4. classes : [`string`] : Set the classes for the notification container and buttons.
 
 **Example**:
-```
+```javascript
 var notiObj = {
-	message:"Your notification message,
+	message:"Your notification message",
 	dismissal:true, // On click of overlay alert will close
 	buttons:[
 	{
@@ -56,7 +56,7 @@ var notiObj = {
 ```
 ####**How to call notification message**
 Call the `notification.notify()` function with the notification Object and write the callback function to get the response.
-```
+```javascript
 notification.notify(notiObj, function(res){ // response is the button object
 	console.log("You clicked button",res);
 	//On the basis of response write your code.
@@ -72,7 +72,7 @@ notification.notify(notiObj, function(res){ // response is the button object
 ####Make **Synchronous **  call
 We can make it synchronous easily using the nested call.
 See the below syntax.
-```
+```javascript
 notification.notify(notificationObj,function(res){ 
 	// On the first call response we can call the otherfunction or alert
 	if(res.result === 'ok'){
