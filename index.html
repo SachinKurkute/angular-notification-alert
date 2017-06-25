@@ -1,16 +1,22 @@
 <html>
 <head>
 <title>Angular Alert Notifications</title>
-<link rel="stylesheet" type="text/css" href="resources/style.css">
+<link rel="stylesheet" type="text/css" href="resources/lib/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <link rel="stylesheet" type="text/css" href="notify/notify.css">
 <script type="text/javascript" src="resources/lib/angular.min.js"></script>
 <script type="text/javascript" src="notify/notify.js"></script>
 </head>
+
+<a href="https://github.com/SachinKurkute/angular-notification-alert" id="github-ribbon">
+	<img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
 <body ng-app="notifyApp">
+
 	<div ng-controller="notifyC">
 		<div>
 			<h2>Welcome by notify.js</h2>
-		</div>
+		</div>	
 		<div>
 			<button ng-click="callAlert()">Alert Call</button>
 <pre>
@@ -58,5 +64,5 @@
 
 	<!-- alert-notification directive added on root level-->
 	<alert-notification></alert-notification>
-	<script type="text/javascript" src="resources/app.js"></script>
+	<script type="text/javascript" src="resources/js/app.js"></script>
 </body>
